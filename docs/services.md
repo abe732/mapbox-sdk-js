@@ -60,9 +60,9 @@
   - [CustomMarkerOverlay](#custommarkeroverlay)
   - [PathOverlay](#pathoverlay)
   - [GeoJsonOverlay](#geojsonoverlay)
+  - [UploadableFile](#uploadablefile)
   - [Coordinates](#coordinates)
   - [BoundingBox](#boundingbox)
-- [UploadableFile](#uploadablefile)
 
 ## Styles
 
@@ -287,10 +287,6 @@ Create s3 credentials.
 
 See the [corresponding HTTP service documentation][80].
 
-**Parameters**
-
-- `config`  
-
 Returns **MapiRequest** 
 
 ### createUpload
@@ -347,10 +343,6 @@ Learn more about this service and its responses in
 List datasets in your account.
 
 See the [corresponding HTTP service documentation][85].
-
-**Parameters**
-
-- `config`  
 
 Returns **MapiRequest** 
 
@@ -665,10 +657,6 @@ List your access tokens.
 
 See the [corresponding HTTP service documentation][111].
 
-**Parameters**
-
-- `config`  
-
 Returns **MapiRequest** 
 
 ### createToken
@@ -722,10 +710,6 @@ Get data about the client's access token.
 
 See the [corresponding HTTP service documentation][115].
 
-**Parameters**
-
-- `config`  
-
 Returns **MapiRequest** 
 
 ### deleteToken
@@ -747,10 +731,6 @@ List your available scopes. Each item is a metadata
 object about the scope, not just the string scope.
 
 See the [corresponding HTTP service documentation][117].
-
-**Parameters**
-
-- `config`  
 
 Returns **MapiRequest** 
 
@@ -849,6 +829,14 @@ Type: [Object][64]
 
 - `geoJson` **[Object][64]** Valid GeoJSON.
 
+### UploadableFile
+
+In Node, files must be `ReadableStream`s or paths pointing for the file in the filesystem.
+
+In the browser, files must be `Blob`s or `ArrayBuffer`s.
+
+Type: ([Blob][119] \| [ArrayBuffer][120] \| [string][65] | ReadableStream)
+
 ### Coordinates
 
 `[longitude, latitude]`
@@ -860,14 +848,6 @@ Type: [Array][74]&lt;[number][68]>
 `[minLongitude, minLatitude, maxLongitude, maxLatitude]`
 
 Type: [Array][74]&lt;[number][68]>
-
-## UploadableFile
-
-In Node, files must be `ReadableStream`s or paths pointing for the file in the filesystem.
-
-In the browser, files must be `Blob`s or `ArrayBuffer`s.
-
-Type: ([Blob][119] \| [ArrayBuffer][120] \| [string][65] | ReadableStream)
 
 [1]: #styles
 
@@ -985,11 +965,11 @@ Type: ([Blob][119] \| [ArrayBuffer][120] \| [string][65] | ReadableStream)
 
 [58]: #geojsonoverlay
 
-[59]: #coordinates
+[59]: #uploadablefile
 
-[60]: #boundingbox
+[60]: #coordinates
 
-[61]: #uploadablefile
+[61]: #boundingbox
 
 [62]: https://www.mapbox.com/api-documentation/#styles
 
